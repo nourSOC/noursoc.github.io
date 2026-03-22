@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nour Maghalawy | SOC Analyst</title>
+  <title>Nour Maghalawy | SOC Analyst & Detection Engineering Portfolio</title>
   <style>
     :root {
       --bg: #07111f;
@@ -15,53 +16,625 @@
       --accent-2: #6effc2;
       --danger: #ff5b7f;
       --shadow: 0 20px 60px rgba(0,0,0,.35);
-    }* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(92,200,255,.12), transparent 20%),
-    radial-gradient(circle at 80% 15%, rgba(110,255,194,.08), transparent 18%),
-    linear-gradient(180deg, #081221 0%, #06101b 100%);
-  color: var(--text);
-  min-height: 100vh;
-}
+    }
 
-.grid-bg::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(92,200,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92,200,255,0.05) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.15));
-  pointer-events: none;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-.container {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-}
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(92,200,255,.12), transparent 20%),
+        radial-gradient(circle at 80% 15%, rgba(110,255,194,.08), transparent 18%),
+        linear-gradient(180deg, #081221 0%, #06101b 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  backdrop-filter: blur(10px);
-  background: rgba(6, 16, 27, 0.75);
-  border-bottom: 1px solid rgba(108, 158, 255, 0.12);
-}
+    .grid-bg::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(92,200,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92,200,255,0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.15));
+      pointer-events: none;
+    }
 
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
-}
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(6, 16, 27, 0.75);
+      border-bottom: 1px solid rgba(108, 158, 255, 0.12);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 64px 0 32px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -35% auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(92,200,255,.22), transparent 60%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(92,200,255,.08);
+      border: 1px solid rgba(92,200,255,.18);
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.03;
+    }
+
+    .subhead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 760px;
+    }
+
+    .highlight {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .tag-row,
+    .skills-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #3f86ff);
+      color: #05111d;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 24px;
+    }
+
+    .stat-box {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .stat-small {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 18px 0 28px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(92,200,255,.03), transparent 55%);
+      pointer-events: none;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-type {
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(110,255,194,.08);
+      border: 1px solid rgba(110,255,194,.16);
+      color: var(--accent-2);
+    }
+
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .project p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .skills-panel {
+      padding: 22px;
+    }
+
+    .skills-grid {
+      margin-top: 14px;
+    }
+
+    .footer {
+      padding: 28px 0 50px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .project h3 {
+        font-size: 20px;
+      }
+
+      .subhead {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body class="grid-bg">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Nour<span>SOC</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="https://github.com/nourSOC" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/nourmaghalawy" target="_blank">LinkedIn</a>
+        <a href="Nour_Maghalawy_SOC_Analyst_Resume.pdf" target="_blank">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-card">
+          <div class="eyebrow">Blue Team • SOC • Detection Engineering</div>
+          <h1>Nour Maghalawy</h1>
+          <p class="subhead">
+            SOC Analyst focused on <span class="highlight">threat detection</span>,
+            <span class="highlight">incident response</span>, SIEM monitoring, and
+            <span class="highlight">detection engineering</span>.
+            I build practical blue-team labs across Windows security, Active Directory,
+            IDS/IPS, deception, and behavior-based analytics.
+          </p>
+
+          <div class="tag-row">
+            <span class="tag">Splunk</span>
+            <span class="tag">Elastic / ELK</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">Snort</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Windows Security Logs</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="https://github.com/nourSOC" target="_blank">GitHub</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/nourmaghalawy" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card stats">
+          <div class="stat-box">
+            <div class="stat-label">Primary Focus</div>
+            <div class="stat-value">SOC / Blue Team</div>
+            <div class="stat-small">
+              Hands-on detection labs, technical documentation, and investigation-driven security work.
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-label">Core Stack</div>
+            <div class="stat-value">SIEM + IDS</div>
+            <div class="stat-small">
+              Splunk, ELK, Wazuh, Snort, Windows native logging, and Active Directory.
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-label">Project Style</div>
+            <div class="stat-value">Proof of Work</div>
+            <div class="stat-small">
+              Each repository includes readable documentation, practical steps, and project structure.
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-label">Current Direction</div>
+            <div class="stat-value">Detection Engineering</div>
+            <div class="stat-small">
+              Behavior-based detections, event analysis, deception concepts, and response-minded design.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Featured Projects</h2>
+            <p>
+              Selected blue-team projects and labs that reflect practical detection,
+              monitoring, hardening, and security engineering work.
+            </p>
+          </div>
+        </div>
+
+        <div class="projects">
+          <article class="card project">
+            <div class="project-top">
+              <span class="project-type">Blue Team Lab</span>
+              <span class="pill">Active Directory</span>
+            </div>
+            <h3>Active Directory Security Hardening Lab</h3>
+            <p>
+              Implemented user-level hardening in a Windows Server domain environment
+              using Group Policy, privilege restrictions, and centralized policy enforcement.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Windows Server</span>
+              <span class="tag">AD DS</span>
+              <span class="tag">GPO</span>
+              <span class="tag">Endpoint Hardening</span>
+            </div>
+            <div class="project-footer">
+              <a class="btn btn-secondary" href="https://github.com/nourSOC/Active-Directory-Security-Hardening-Lab" target="_blank">
+                Open Repository
+              </a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <span class="project-type">Network Security Lab</span>
+              <span class="pill">Snort IDS / IPS</span>
+            </div>
+            <h3>Snort IDS / IPS Lab</h3>
+            <p>
+              Deployed Snort in IDS mode and then inline IPS mode using AFPacket,
+              built custom rules, simulated attacks, and validated real-time blocking behavior.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Ubuntu</span>
+              <span class="tag">AFPacket</span>
+              <span class="tag">hping3</span>
+              <span class="tag">Traffic Filtering</span>
+            </div>
+            <div class="project-footer">
+              <a class="btn btn-secondary" href="https://github.com/nourSOC/Snort-IDS-IPS-Lab" target="_blank">
+                Open Repository
+              </a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <span class="project-type">Detection Lab</span>
+              <span class="pill">Behavior-Based Detection</span>
+            </div>
+            <h3>Info-Stealer Detection Lab</h3>
+            <p>
+              Built a small detection lab to identify early-stage fileless Info-Stealer
+              behavior using Windows process creation telemetry and SIEM-based behavioral logic.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Event ID 4688</span>
+              <span class="tag">PowerShell</span>
+              <span class="tag">Elastic SIEM</span>
+              <span class="tag">Process Chaining</span>
+            </div>
+            <div class="project-footer">
+              <a class="btn btn-secondary" href="https://github.com/nourSOC/InfoStealer-Detection-Lab" target="_blank">
+                Open Repository
+              </a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <span class="project-type">Security Research</span>
+              <span class="pill">Deception</span>
+            </div>
+            <h3>Early Breach Detection using Deception</h3>
+            <p>
+              Designed a lightweight deception-based detection model that uses canary-style
+              signals and smart containment ideas to expose attacker footholds earlier
+              and with less noise.
+            </p>
+            <div class="tag-row">
+              <span class="tag">MITRE ATT&amp;CK</span>
+              <span class="tag">Canary Tokens</span>
+              <span class="tag">Lateral Movement</span>
+              <span class="tag">Containment</span>
+            </div>
+            <div class="project-footer">
+              <a class="btn btn-secondary" href="https://github.com/nourSOC/Deception-Based-Early-Breach-Detection" target="_blank">
+                Open Repository
+              </a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-top">
+              <span class="project-type">Security Research Lab</span>
+              <span class="pill">Adversarial ML / Wazuh SIEM</span>
+            </div>
+            <h3>Adversarial ML Behavior Detection &amp; SIEM Correlation Lab</h3>
+            <p>
+              Simulated adversarial machine learning behavior by generating abnormal ML inference signals,
+              then transformed them into Windows security events and integrated them into Wazuh SIEM.
+              Built custom detection rules and correlation logic to identify suspicious ML-driven behavior
+              and escalate repeated activity into high-severity alerts.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Wazuh</span>
+              <span class="tag">SIEM</span>
+              <span class="tag">Adversarial ML</span>
+              <span class="tag">Detection Engineering</span>
+              <span class="tag">Correlation Rules</span>
+            </div>
+            <div class="project-footer">
+              <a class="btn btn-secondary" href="https://github.com/nourSOC/adversarial-ml-wazuh-lab" target="_blank">
+                View Project on GitHub
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Tools &amp; Skills</h2>
+            <p>
+              Technologies and focus areas reflected across my labs, projects, and technical write-ups.
+            </p>
+          </div>
+        </div>
+
+        <div class="card skills-panel">
+          <div class="skills-grid">
+            <span class="tag">SIEM Monitoring</span>
+            <span class="tag">Threat Detection</span>
+            <span class="tag">Incident Response</span>
+            <span class="tag">Detection Engineering</span>
+            <span class="tag">Threat Hunting</span>
+            <span class="tag">Windows Event Logs</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Snort IDS / IPS</span>
+            <span class="tag">Splunk</span>
+            <span class="tag">Elastic / ELK</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Linux</span>
+            <span class="tag">PowerShell Monitoring</span>
+            <span class="tag">Network Security</span>
+            <span class="tag">MITRE ATT&amp;CK</span>
+            <span class="tag">Digital Forensics</span>
+            <span class="tag">Malware Analysis Basics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container footer">
+      Built for LinkedIn, GitHub, and recruiter-friendly project discovery.
+    </div>
+  </main>
+</body>
+</html>
 .brand {
   font-weight: 800;
   letter-spacing: 0.5px;
